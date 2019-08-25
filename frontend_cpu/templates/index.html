@@ -2,14 +2,28 @@
 <html>
 <head>
 <style>
+#background {
+background-image: url('static/background.jpg');
+background-repeat: no-repeat;
+width: 1440px;
+height: 900px;
+}
+#Register{
+width: 173px;
+height: 83px;
+}
+
 </style>
 </head>
 
 <body>
-	<div >
-		
-	<img src="{{url_for('static', filename='background.jpg')}}">
-</div>
+	<div id='background'>
+		<div id='Register' style="position: absolute; top:133px; left:125px"> </div>
+		<div id='Register' style="position: absolute; top:133px; left:365px"> </div>
+		<div id='Register' style="position: absolute; top:133px; left:600px"> </div>
+		<div id='Register' style="position: absolute; top:135px; left:840px"> </div>
+
+	</div>
 </body>
 
 </html>
