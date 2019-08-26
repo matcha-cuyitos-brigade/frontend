@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="icon" href="data:,">
 <head>
 <style>
 #background {
@@ -8,9 +9,58 @@ background-repeat: no-repeat;
 width: 1440px;
 height: 900px;
 }
-#Register{
-width: 173px;
-height: 83px;
+#register{
+background-image: url('static/register.png');
+background-repeat: no-repeat;
+width: 147px;
+height: 59px;
+}
+
+#RAM{
+background-image: url('static/ram.png');
+background-repeat: no-repeat;
+width: 109px;
+height: 26px;
+}
+
+#controlunit{
+background-image: url('static/controlunit.png');
+background-repeat: no-repeat;
+width: 33px;
+height: 35px;
+}
+
+#addr.register{
+background-image: url('static/addr_register.png');
+background-repeat: no-repeat;
+width: 112px;
+height: 39px;
+}
+
+#input1{
+background-image: url('static/input1.png');
+background-repeat: no-repeat;
+width: 258px;
+height: 45px;
+}
+
+#input2{
+background-image: url('static/input2.png');
+background-repeat: no-repeat;
+width: 121px;
+height: 148px;
+}
+
+#output{
+background-image: url('static/output.png');
+background-repeat: no-repeat;
+width: 163px;
+height: 61px;
+}
+
+#clock{
+background-image: url('static/clock.png');
+background-repeat: no-repeat;
 }
 
 </style>
@@ -18,11 +68,53 @@ height: 83px;
 
 <body>
 	<div id='background'>
-		<div id='Register' style="position: absolute; top:133px; left:125px"> </div>
-		<div id='Register' style="position: absolute; top:133px; left:365px"> </div>
-		<div id='Register' style="position: absolute; top:133px; left:600px"> </div>
-		<div id='Register' style="position: absolute; top:135px; left:840px"> </div>
+		<div id='register1' style="position: absolute; top:143px; left:153px"> registro1 </div>
+		<div id='register2' style="position: absolute; top:144px; left:384px"> registro2 </div>
+		<div id='register3' style="position: absolute; top:146px; left:618px"> registro3 </div>
+		<div id='register4' style="position: absolute; top:147px; left:848px"> registro4 </div>
 
+		<div id='RAM0' style="position: absolute; top:220px; left:1255px">ram1</div>
+		<div id='RAM1' style="position: absolute; top:255px; left:1255px">ram2</div>
+		<div id='RAM2' style="position: absolute; top:287px; left:1255px">ram3</div>
+		<div id='RAM3' style="position: absolute; top:320px; left:1255px">ram4</div>
+		<div id='RAM4' style="position: absolute; top:355px; left:1255px">ram5</div>
+		<div id='RAM5' style="position: absolute; top:390px; left:1255px">ram6</div>
+		<div id='RAM6' style="position: absolute; top:423px; left:1255px">ram7</div>
+		<div id='RAM7' style="position: absolute; top:457px; left:1255px">ram8</div>
+		<div id='RAM8' style="position: absolute; top:490px; left:1255px">ram9</div>
+		<div id='RAM9' style="position: absolute; top:525px; left:1255px">ram10</div>
+		<div id='RAM10' style="position: absolute; top:560px; left:1255px">ram11</div>
+		<div id='RAM11' style="position: absolute; top:592px; left:1255px">ram12</div>
+		<div id='RAM12' style="position: absolute; top:624px; left:1255px">ram13</div>
+		<div id='RAM13' style="position: absolute; top:660px; left:1255px">ram14</div>
+		<div id='RAM14' style="position: absolute; top:693px; left:1255px">ram15</div>
+		<div id='RAM15' style="position: absolute; top:726px; left:1255px">ram16</div>
+
+		<div id='controlunit_opcode' style="position: absolute; top:350px; left:815px">C1</div>
+		<div id='controlunit_operando' style="position: absolute; top:350px; left:860px">C2</div>
+		<div id='controlunit_operando2' style="position: absolute; top:350px; left:900px">C3</div>
+
+		<div id='controlunit_0' style="position: absolute; top:550px; left:525px">0</div>
+		<div id='controlunit_0' style="position: absolute; top:550px; left:565px">Z</div>
+		<div id='controlunit_0' style="position: absolute; top:550px; left:605px">N</div>
+
+		<div id='addr_register' style="position: absolute; top:550px; left:830px"> addr.register</div>
+
+		<div id="input1" style="position: absolute; top:340px; left:200px">input1</div>
+		<div id="input2" style="position: absolute; top:405px; left:325px">input2</div>
+		<div id="output" style="position: absolute; top:580px; left:280px">output</div>
+
+		<div id="clock" style="position: absolute; top:750px; left:700px"> clock</div>
+		<button type="button" onclick="alert('Boot trial')" style="position: absolute; top:830px; left:335px">BOOT</button>
+
+		<select style="position: absolute; top:830px; left:970px">
+  			<option value="option1">1</option>
+  			<option value="option2">2</option>
+  			<option value="option3">3</option>
+ 			<option value="option4">4</option>
+			</select>
+
+		<button type="button" onclick="alert('run/debug trial')" style="position: absolute; top:830px; left:1170px">RUN/DEBUG</button>
 	</div>
 </body>
 
