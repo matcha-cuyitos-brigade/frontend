@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - echo "Travis test"
+  - docker build --rm -f "frontend_cpu/Dockerfile" -t webapp:0.1 frontend_cpu
