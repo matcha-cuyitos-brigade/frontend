@@ -1,7 +1,10 @@
-language: bash
-sudo: required
-services: docker
-script:
+language: ruby
+
+services:
+  - docker
+
+before_install:
   - cd frontend_cpu
   - docker build --rm -f "frontend_cpu/Dockerfile" -t webapp:0.1 frontend_cpu
-
+script:
+  - bundle exec rake test
