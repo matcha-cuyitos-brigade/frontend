@@ -32,4 +32,9 @@ an interactive frontend for a cpu simulator, created using HTML, Flask and NGINX
    ```bash
 git clone <git link>
 ```
+then go to the project directory using the following command:
+```bash
+cd <user>/frontend/frontend_cpu/
+```
+now it's really important that you already have docker on your computer, if you don't please stop here and go to https://docs.docker.com/docker-for-mac/install/ to install it
 
