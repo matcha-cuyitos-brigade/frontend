@@ -68,47 +68,78 @@ background-repeat: no-repeat;
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 <script>
 
-$(document).ready(function(){
-    $.getJSON("ram.json",function(data){
-		$('#register1').append(data.register1);
-		$('#register2').append(data.register2);
-		$('#register3').append(data.register3);
-		$('#register4').append(data.register4);
-        $('#RAM0').append(data.RAM0);
-		$('#RAM1').append(data.RAM1);
-		$('#RAM2').append(data.RAM2);
-		$('#RAM3').append(data.RAM3);
-		$('#RAM4').append(data.RAM4);
-		$('#RAM5').append(data.RAM5);
-		$('#RAM6').append(data.RAM6);
-		$('#RAM7').append(data.RAM7);
-		$('#RAM8').append(data.RAM8);
-		$('#RAM9').append(data.RAM9);
-		$('#RAM10').append(data.RAM10);
-		$('#RAM11').append(data.RAM11);
-		$('#RAM12').append(data.RAM12);
-		$('#RAM13').append(data.RAM13);
-		$('#RAM14').append(data.RAM14);
-		$('#RAM15').append(data.RAM15);
-		$('#controlunit_opcode').append(data.controlunit_opcode);
-		$('#controlunit_operando').append(data.controlunit_operando);
-		$('#controlunit_operando2').append(data.controlunit_operando2);
-		$('#controlunit_0').append(data.controlunit_0);
-		$('#controlunit_Z').append(data.controlunit_Z);
-		$('#controlunit_N').append(data.controlunit_N);
-		$('#addr_register').append(data.addr_register);
-		$('#input1').append(data.input1);
-		$('#input2').append(data.input2);
-		$('#output').append(data.output);
-		$('#clock').append(data.clock);
-    });  
-});
 
+$(function() {
+          $('a#boot').bind('click', function() {
+            $.getJSON('/boot',
+                function(data) {
+					$('#RAM0').append(data.RAM0);
+					$('#RAM1').append(data.RAM1);
+					$('#RAM2').append(data.RAM2);
+					$('#RAM3').append(data.RAM3);
+					$('#RAM4').append(data.RAM4);
+					$('#RAM5').append(data.RAM5);
+					$('#RAM6').append(data.RAM6);
+					$('#RAM7').append(data.RAM7);
+					$('#RAM8').append(data.RAM8);
+					$('#RAM9').append(data.RAM9);
+					$('#RAM10').append(data.RAM10);
+					$('#RAM11').append(data.RAM11);
+					$('#RAM12').append(data.RAM12);
+					$('#RAM13').append(data.RAM13);
+					$('#RAM14').append(data.RAM14);
+					$('#RAM15').append(data.RAM15);
+					$('#clock').append(data.clock);
+            });
+            return false;
+          });
+        });
+
+		$(function() {
+          $('a#run_debug').bind('click', function() {
+            $.getJSON('/run_debug',
+                function(data) {
+					$('#register1').append(data.register1);
+					$('#register2').append(data.register2);
+					$('#register3').append(data.register3);
+					$('#register4').append(data.register4);
+					$('#RAM0').append(data.RAM0);
+					$('#RAM1').append(data.RAM1);
+					$('#RAM2').append(data.RAM2);
+					$('#RAM3').append(data.RAM3);
+					$('#RAM4').append(data.RAM4);
+					$('#RAM5').append(data.RAM5);
+					$('#RAM6').append(data.RAM6);
+					$('#RAM7').append(data.RAM7);
+					$('#RAM8').append(data.RAM8);
+					$('#RAM9').append(data.RAM9);
+					$('#RAM10').append(data.RAM10);
+					$('#RAM11').append(data.RAM11);
+					$('#RAM12').append(data.RAM12);
+					$('#RAM13').append(data.RAM13);
+					$('#RAM14').append(data.RAM14);
+					$('#RAM15').append(data.RAM15);
+					$('#controlunit_opcode').append(data.controlunit_opcode);
+					$('#controlunit_operando').append(data.controlunit_operando);
+					$('#controlunit_operando2').append(data.controlunit_operando2);
+					$('#controlunit_0').append(data.controlunit_0);
+					$('#controlunit_Z').append(data.controlunit_Z);
+					$('#controlunit_N').append(data.controlunit_N);
+					$('#addr_register').append(data.addr_register);
+					$('#input1').append(data.input1);
+					$('#input2').append(data.input2);
+					$('#output').append(data.output);
+					$('#clock').append(data.clock);
+					$('#button').append(data.button)
+            });
+            return false;
+          });
+        });
 </script>
 
-<body>
+<body style="font-family: Verdana">
 	<div id='background'>
-		<div id='register1' style="position: absolute; top:143px; left:153px">  </div>
+		<div id='register1' style="position: absolute; top:143px; left:153px" >  </div>
 		<div id='register2' style="position: absolute; top:144px; left:384px"> </div>
 		<div id='register3' style="position: absolute; top:146px; left:618px"> </div>
 		<div id='register4' style="position: absolute; top:147px; left:848px">  </div>
@@ -146,25 +177,30 @@ $(document).ready(function(){
 
 		<div id="clock" style="position: absolute; top:750px; left:700px"> </div>
 
+		<form>
+		<a href=# id=boot style="position: absolute; top:830px; left:335px"><button class='btn btn-default'>BOOT</button></a>
+		</form>
 
-		<form action="" method="post" style="position: absolute; top:830px; left:335px">
-				<input type="submit" name="boot" value="BOOT" />
-			</form>
 
-		<select style="position: absolute; top:830px; left:970px">
-  			<option value="option1">1</option>
-  			<option value="option2">2</option>
-  			<option value="option3">3</option>
-			 <option value="option4">4</option>
-			 <option value="option4">5</option>
-			</select>
+			<form method="POST"> 
+					<select name ="startYear"style="position: absolute; top:830px; left:970px">
+						<option value="" disabled="disabled" selected="selected">.code</option>
+						<option value="code1">1</option>
+						<option value="code2">2</option>
+						<option value="code3">3</option>
+						<option value="code4">4</option>
+						<option value="code5">5</option>
+					</select>
+			
+					</form>
+			
+		<form>
+		<a href=# id=run_debug style="position: absolute; top:830px; left:1170px"><button class='btn btn-default'>
+			<p id=button> </p>
+		</button></a>
+		</form>
 
-			<form action="" method="post" style="position: absolute; top:830px; left:1170px">
-					<input type="submit" name="run/debug" value="RUN/DEBUG" />
-				</form>
 
-		<!--travis test-->
-		<!--<button type="button" onclick="alert('run/debug trial')" style="position: absolute; top:830px; left:1170px">RUN/DEBUG</button>-->
 	</div>
 </body>
 
