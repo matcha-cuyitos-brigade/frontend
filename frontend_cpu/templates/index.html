@@ -63,6 +63,30 @@ background-image: url('clock.png');
 background-repeat: no-repeat;
 }
 
+#imgRam {
+  display: none;
+  height: 200px;
+  width: 200px;
+}
+
+#imgRegisters {
+  display: none;
+  height: 200px;
+  width: 200px;
+}
+
+#imgClock {
+  display: none;
+  height: 200px;
+  width: 200px;
+}
+
+#imgAlu {
+  display: none;
+  height: 200px;
+  width: 200px;
+}
+
 </style>
 </head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
@@ -118,6 +142,29 @@ $(function() {
 	});
 });
 
+	var imageR = document.getElementById("imgRam");
+	var ram = confirm(RAM_cuyo);
+	if (ram) {
+  	imageR.style.display = 'block';
+	}
+
+	var imageRe = document.getElementById("imgRegisters");
+	var registers = confirm(registers_cuyo);
+	if (registers) {
+  	imageaRe.style.display = 'block';
+	}
+
+	var imageC = document.getElementById("imgClock");
+	var clock = confirm(clock_cuyo);
+	if (clock) {
+  	imageC.style.display = 'block';
+	}
+
+	var imageA = document.getElementById("imgAlu");
+	var alu = confirm(ALU_cuyo);
+	if (alu) {
+  	imageRa.style.display = 'block';
+	}
 </script>
 
 <body style="font-family: Verdana">
@@ -166,7 +213,7 @@ $(function() {
 
 
 			<form method="POST"> 
-					<select name ="startYear"style="position: absolute; top:830px; left:970px">
+					<select id="code" style="position: absolute; top:830px; left:970px">
 						<option value="" disabled="disabled" selected="selected">.code</option>
 						<option value="code1">1</option>
 						<option value="code2">2</option>
@@ -184,7 +231,12 @@ $(function() {
 		</form>
 
 
+		<img id="imgRam" src="" style=""/>
+		<img id="imgRegisters" src="" style=""/>
+		<img id="imgClock" src="" style=""/>
+		<img id="imgAlu" src="" style=""/>
 	</div>
+
 </body>
 
 </html>
