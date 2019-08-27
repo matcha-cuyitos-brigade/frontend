@@ -1,8 +1,0 @@
-language: bash
-
-services:
-  - docker
-
-before_install:
-  - cd frontend_cpu
-  - docker build --rm -f "frontend_cpu/Dockerfile" -t webapp:0.1 frontend_cpu
