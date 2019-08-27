@@ -102,7 +102,7 @@ $(function() {
 
 	$(function () {
 		$('a#boot').bind('click', function () {
-			$.getJSON('/boot.jason',
+			$.getJSON('/boot',
 					function (data) {
 						$('#register1').append(data.register1);
 						$('#register2').append(data.register2);
