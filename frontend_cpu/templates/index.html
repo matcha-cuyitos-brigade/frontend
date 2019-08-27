@@ -70,71 +70,54 @@ background-repeat: no-repeat;
 
 
 $(function() {
-          $('a#boot').bind('click', function() {
-            $.getJSON('/boot',
-                function(data) {
-					$('#RAM0').append(data.RAM0);
-					$('#RAM1').append(data.RAM1);
-					$('#RAM2').append(data.RAM2);
-					$('#RAM3').append(data.RAM3);
-					$('#RAM4').append(data.RAM4);
-					$('#RAM5').append(data.RAM5);
-					$('#RAM6').append(data.RAM6);
-					$('#RAM7').append(data.RAM7);
-					$('#RAM8').append(data.RAM8);
-					$('#RAM9').append(data.RAM9);
-					$('#RAM10').append(data.RAM10);
-					$('#RAM11').append(data.RAM11);
-					$('#RAM12').append(data.RAM12);
-					$('#RAM13').append(data.RAM13);
-					$('#RAM14').append(data.RAM14);
-					$('#RAM15').append(data.RAM15);
-					$('#clock').append(data.clock);
-            });
-            return false;
-          });
-        });
 
-		$(function() {
-          $('a#run_debug').bind('click', function() {
-            $.getJSON('/run_debug',
-                function(data) {
-					$('#register1').append(data.register1);
-					$('#register2').append(data.register2);
-					$('#register3').append(data.register3);
-					$('#register4').append(data.register4);
-					$('#RAM0').append(data.RAM0);
-					$('#RAM1').append(data.RAM1);
-					$('#RAM2').append(data.RAM2);
-					$('#RAM3').append(data.RAM3);
-					$('#RAM4').append(data.RAM4);
-					$('#RAM5').append(data.RAM5);
-					$('#RAM6').append(data.RAM6);
-					$('#RAM7').append(data.RAM7);
-					$('#RAM8').append(data.RAM8);
-					$('#RAM9').append(data.RAM9);
-					$('#RAM10').append(data.RAM10);
-					$('#RAM11').append(data.RAM11);
-					$('#RAM12').append(data.RAM12);
-					$('#RAM13').append(data.RAM13);
-					$('#RAM14').append(data.RAM14);
-					$('#RAM15').append(data.RAM15);
-					$('#controlunit_opcode').append(data.controlunit_opcode);
-					$('#controlunit_operando').append(data.controlunit_operando);
-					$('#controlunit_operando2').append(data.controlunit_operando2);
-					$('#controlunit_0').append(data.controlunit_0);
-					$('#controlunit_Z').append(data.controlunit_Z);
-					$('#controlunit_N').append(data.controlunit_N);
-					$('#addr_register').append(data.addr_register);
-					$('#input1').append(data.input1);
-					$('#input2').append(data.input2);
-					$('#output').append(data.output);
-					$('#clock').append(data.clock);
-					$('#button').append(data.button)
-            });
-            return false;
-          });
-        });
+
+	$(function () {
+		$('a#boot').bind('click', function () {
+			$.getJSON('/boot',
+					function (data) {
+						$('#register1').append(data.register1);
+						$('#register2').append(data.register2);
+						$('#register3').append(data.register3);
+						$('#register4').append(data.register4);
+						$('#RAM0').append(data.RAM0);
+						$('#RAM1').append(data.RAM1);
+						$('#RAM2').append(data.RAM2);
+						$('#RAM3').append(data.RAM3);
+						$('#RAM4').append(data.RAM4);
+						$('#RAM5').append(data.RAM5);
+						$('#RAM6').append(data.RAM6);
+						$('#RAM7').append(data.RAM7);
+						$('#RAM8').append(data.RAM8);
+						$('#RAM9').append(data.RAM9);
+						$('#RAM10').append(data.RAM10);
+						$('#RAM11').append(data.RAM11);
+						$('#RAM12').append(data.RAM12);
+						$('#RAM13').append(data.RAM13);
+						$('#RAM14').append(data.RAM14);
+						$('#RAM15').append(data.RAM15);
+						$('#controlunit_opcode').append(data.controlunit_opcode);
+						$('#controlunit_operando').append(data.controlunit_operando);
+						$('#controlunit_operando2').append(data.controlunit_operando2);
+						$('#controlunit_0').append(data.controlunit_0);
+						$('#controlunit_Z').append(data.controlunit_Z);
+						$('#controlunit_N').append(data.controlunit_N);
+						$('#addr_register').append(data.addr_register);
+						$('#input1').append(data.input1);
+						$('#input2').append(data.input2);
+						$('#output').append(data.output);
+						$('#clock').append(data.clock);
+						$('#button').append(data.button);
+						$('#RAM_cuyo').append(data.RAM_cuyo);
+						$('#registers_cuyo').append(data.registers_cuyo);
+						$('#clock_cuyo').append(data.clock_cuyo);
+						$('#ALU_cuyo').append(data.ALU_cuyo);
+					});
+			return false;
+		});
+	});
+});
+
 </script>
 
 <body style="font-family: Verdana">
@@ -178,7 +161,7 @@ $(function() {
 		<div id="clock" style="position: absolute; top:750px; left:700px"> </div>
 
 		<form>
-		<a href=# id=boot style="position: absolute; top:830px; left:335px"><button class='btn btn-default'>BOOT</button></a>
+		<a href=# class=boot style="position: absolute; top:830px; left:335px"><button class='btn btn-default'>BOOT</button></a>
 		</form>
 
 
@@ -195,7 +178,7 @@ $(function() {
 					</form>
 			
 		<form>
-		<a href=# id=run_debug style="position: absolute; top:830px; left:1170px"><button class='btn btn-default'>
+		<a href=# class= boot style="position: absolute; top:830px; left:1170px"><button class='btn btn-default'>
 			<p id=button> </p>
 		</button></a>
 		</form>
