@@ -65,30 +65,30 @@ background-repeat: no-repeat;
 
 #imgRam {
   background-image: url('RAM_CUYO.jpg');
-  
-  height: 200px;
-  width: 200px;
+  display: none;
+  height: 367px;
+  width: 600px;
 }
 
 #imgRegisters {
     background-image: url('REGIST_cuyo.jpg');
   display: none;
-  height: 200px;
-  width: 200px;
+  height: 600px;
+  width: 300px;
 }
 
 #imgClock {
     background-image: url('CLOCK_cuyo.jpg');
   display: none;
-  height: 200px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
 }
 
 #imgAlu {
     background-image: url('ALU_cuyo.jpg');
   display: none;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 236px;
 }
 
 </style>
@@ -102,7 +102,7 @@ $(function() {
 
 	$(function () {
 		$('a#boot').bind('click', function () {
-			$.getJSON('/boot',
+			$.getJSON('/boot.jason',
 					function (data) {
 						$('#register1').append(data.register1);
 						$('#register2').append(data.register2);
@@ -136,10 +136,10 @@ $(function() {
 						$('#output').append(data.output);
 						$('#clock').append(data.clock);
 						$('#button').append(data.button);
-						$('#RAM_cuyo').append(data.RAM_cuyo);
-						$('#registers_cuyo').append(data.registers_cuyo);
-						$('#clock_cuyo').append(data.clock_cuyo);
-						$('#ALU_cuyo').append(data.ALU_cuyo);
+						$(ram).append(data.RAM_cuyo);
+						$(registers).append(data.registers_cuyo);
+						$(clock).append(data.clock_cuyo);
+						$(alu).append(data.ALU_cuyo);
 					});
 			return false;
 		});
@@ -147,25 +147,21 @@ $(function() {
 });
 
 	var imageR = document.getElementById("imgRam");
-	var ram = confirm(RAM_cuyo);
 	if (ram) {
   	imageR.style.display = 'block';
 	}
 
 	var imageRe = document.getElementById("imgRegisters");
-	var registers = confirm(registers_cuyo);
 	if (registers) {
   	imageaRe.style.display = 'block';
 	}
 
 	var imageC = document.getElementById("imgClock");
-	var clock = confirm(clock_cuyo);
 	if (clock) {
   	imageC.style.display = 'block';
 	}
 
 	var imageA = document.getElementById("imgAlu");
-	var alu = confirm(ALU_cuyo);
 	if (alu) {
   	imageRa.style.display = 'block';
 	}
@@ -235,10 +231,10 @@ $(function() {
 		</form>
 
 
-		<img id="imgRam"  style="position: absolute; top:700px; left:170px"/>
-		<img id="imgRegisters" style="position: absolute; top:830px; left:1170px"/>
-		<img id="imgClock"  style="position: absolute; top:830px; left:1170px"/>
-		<img id="imgAlu" style="position: absolute; top:830px; left:1170px"/>
+		<img id="imgRam"  style="position: absolute; top:700px; left:170px">
+		<img id="imgRegisters" style="position: absolute; top:830px; left:1170px">
+		<img id="imgClock"  style="position: absolute; top:830px; left:1170px">
+		<img id="imgAlu" style="position: absolute; top:830px; left:1170px">
 	</div>
 
 </body>
