@@ -73,6 +73,32 @@ $(function() {
           $('a#boot').bind('click', function() {
             $.getJSON('/boot',
                 function(data) {
+					$('#RAM0').append(data.RAM0);
+					$('#RAM1').append(data.RAM1);
+					$('#RAM2').append(data.RAM2);
+					$('#RAM3').append(data.RAM3);
+					$('#RAM4').append(data.RAM4);
+					$('#RAM5').append(data.RAM5);
+					$('#RAM6').append(data.RAM6);
+					$('#RAM7').append(data.RAM7);
+					$('#RAM8').append(data.RAM8);
+					$('#RAM9').append(data.RAM9);
+					$('#RAM10').append(data.RAM10);
+					$('#RAM11').append(data.RAM11);
+					$('#RAM12').append(data.RAM12);
+					$('#RAM13').append(data.RAM13);
+					$('#RAM14').append(data.RAM14);
+					$('#RAM15').append(data.RAM15);
+					$('#clock').append(data.clock);
+            });
+            return false;
+          });
+        });
+
+		$(function() {
+          $('a#run_debug').bind('click', function() {
+            $.getJSON('/run_debug',
+                function(data) {
 					$('#register1').append(data.register1);
 					$('#register2').append(data.register2);
 					$('#register3').append(data.register3);
@@ -104,6 +130,7 @@ $(function() {
 					$('#input2').append(data.input2);
 					$('#output').append(data.output);
 					$('#clock').append(data.clock);
+					$('#button').append(data.button)
             });
             return false;
           });
@@ -156,19 +183,24 @@ $(function() {
 		<a href=# id=boot style="position: absolute; top:830px; left:335px"><button class='btn btn-default'>BOOT</button></a>
 		</form>
 
-		<select style="position: absolute; top:830px; left:970px">
-  			<option value="option1">1</option>
-  			<option value="option2">2</option>
-  			<option value="option3">3</option>
-			 <option value="option4">4</option>
-			 <option value="option4">5</option>
-			</select>
 
-			<form action="" method="post" style="position: absolute; top:830px; left:1170px">
-					<input type="submit" name="run/debug" value="RUN/DEBUG" />
-				</form>
-
-	
+			<form method="POST"> 
+					<select name ="startYear"style="position: absolute; top:830px; left:970px">
+						<option value="" disabled="disabled" selected="selected">.code</option>
+						<option value="code1">1</option>
+						<option value="code2">2</option>
+						<option value="code3">3</option>
+						<option value="code4">4</option>
+						<option value="code5">5</option>
+					</select>
+			
+					</form>
+			
+		<form>
+		<a href=# id=run_debug style="position: absolute; top:830px; left:1170px"><button class='btn btn-default'>
+			<p id=button> </p>
+		</button></a>
+		</form>
 	</div>
 </body>
 
