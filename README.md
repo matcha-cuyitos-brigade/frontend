@@ -4,6 +4,7 @@
 an interactive frontend for a cpu simulator, created using HTML, Flask and NGINX, it runs on a docker container
 
 ## Folder structure
+```bash
 .
 └── frontend_cpu
     ├── Dockerfile
@@ -25,6 +26,7 @@ an interactive frontend for a cpu simulator, created using HTML, Flask and NGINX
         ├── output.png
         ├── ram.png
         └── register.png
+```
  ## Run Docker container
    clone the repo to your computer using: 
    ```bash
